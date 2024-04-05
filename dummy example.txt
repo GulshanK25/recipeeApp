@@ -1,0 +1,49 @@
+instructions for update 
+
+{
+    "field": "cooktime",
+    "cooktime": "35 minutes"
+}
+
+
+
+
+demo dummy for insert
+
+{
+    "id": 7,
+    "recipetitle": "Chicken Tikka Masala",
+    "description": "A popular Indian dish consisting of marinated and grilled chicken pieces served in a rich, creamy tomato-based sauce.",
+    "ingredients": "500g chicken breast, 200g plain yogurt, 2 tbsp tikka masala spice mix, 1 onion, 2 garlic cloves, 1-inch ginger, 200g canned tomatoes, 200ml heavy cream, Fresh coriander leaves for garnish",
+    "instructions": "Marinate chicken breast pieces in yogurt and tikka masala spice mix for at least 1 hour. Grill or bake the marinated chicken until cooked through. In a separate pan, sauté finely chopped onion, garlic, and ginger until soft. Add canned tomatoes and cook until the sauce thickens. Stir in heavy cream and cooked chicken pieces. Simmer for a few minutes until the sauce is heated through. Garnish with fresh coriander leaves before serving.",
+    "cooktime": "30 minutes"
+} 
+
+
+
+[
+  {
+    "id": 8,
+    "recipetitle": "Shoyu Ramen",
+    "description": "Traditional Japanese noodle soup flavored with soy sauce and topped with various ingredients like sliced pork, boiled eggs, and green onions.",
+    "ingredients": "Ramen noodles, 500g pork belly or shoulder, 4 cups chicken broth, 1/4 cup soy sauce, 2 cloves garlic, minced, 1-inch piece ginger, sliced, 2 green onions, sliced, 2 soft-boiled eggs, sliced narutomaki (fish cake), nori seaweed, sliced bamboo shoots, sliced mushrooms, sesame oil, salt and pepper to taste.",
+    "instructions": "Cook the spaghetti according to package instructions until al dente. Drain and set aside, reserving some pasta water. In a skillet, cook the diced pancetta or bacon until crispy. Remove from heat and set aside. In a bowl, whisk together the eggs and grated Parmesan cheese. Season with salt and black pepper. Add the cooked spaghetti to the skillet with the pancetta or bacon. Pour the egg and cheese mixture over the spaghetti and toss quickly to coat, ensuring the eggs don't scramble. If the pasta seems too dry, add a little reserved pasta water to loosen it. Serve immediately, garnished with chopped fresh parsley if desired.",
+    "cooktime": "20 minutes"
+  },
+  {
+    "id": 9,
+    "recipetitle": "Chicken Tacos",
+    "description": "Flavorful tacos filled with seasoned chicken, fresh salsa, and toppings like lettuce, cheese, and sour cream.",
+    "ingredients": "500g chicken breast, diced, 1 packet taco seasoning mix, 1 onion, diced, 1 bell pepper, diced, 1 cup salsa, 1 cup shredded lettuce, 1 cup shredded cheese, 1/2 cup sour cream, 1/4 cup chopped cilantro, 8-10 taco shells, lime wedges, salt and pepper to taste.",
+    "instructions": "Season diced chicken breast with taco seasoning mix. In a skillet, cook chicken until browned and cooked through. Add diced onion and bell pepper to the skillet and cook until softened. Warm taco shells in the oven or microwave. Fill taco shells with cooked chicken mixture. Top with salsa, shredded lettuce, cheese, sour cream, and chopped cilantro. Serve with lime wedges on the side.",
+    "cooktime": "25 minutes"
+  },
+  {
+    "id": 10,
+    "recipetitle": "Greek Salad",
+    "description": "Refreshing salad made with crisp lettuce, juicy tomatoes, cucumbers, olives, onions, and feta cheese, dressed with olive oil and lemon juice.",
+    "ingredients": "2 cups lettuce, chopped, 1 cup cherry tomatoes, halved, 1 cucumber, sliced, 1/2 cup Kalamata olives, pitted, 1/4 cup red onion, thinly sliced, 100g feta cheese, crumbled, 2 tablespoons extra virgin olive oil, 1 tablespoon lemon juice, 1 teaspoon dried oregano, Salt and pepper to taste.",
+    "instructions": "In a large bowl, combine chopped lettuce, halved cherry tomatoes, sliced cucumber, Kalamata olives, and thinly sliced red onion. Crumble feta cheese over the salad. In a small bowl, whisk together extra virgin olive oil, lemon juice, dried oregano, salt, and pepper to make the dressing. Drizzle the dressing over the salad and toss to coat evenly. Serve chilled as a side dish or light lunch.",
+    "cooktime": "15 minutes"
+  }
+]

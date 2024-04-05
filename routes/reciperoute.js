@@ -14,19 +14,17 @@ router.get("/", async (req, res) => {
     }
 });
 
-router.get("/:id", async (req,res)=>{
-    try{
-        const getrecipeid = await recipe.findOne({id:req.params.id});
-        if (!getrecipeid)
-        {
-            res.status(404)
-            throw new Error ("recipe not found, Invalid ID "); 
+router.get("/:id", async (req, res) => {
+    try {
+        const getrecipeid = await recipe.findOne({ id: req.params.id });
+        if (!getrecipeid) {
+            return res.status(404).json({ message: "Recipe not found" });
         }
-        }
-        catch (error) {
-            console.error("Error getting recipes:", error);
-            res.status(404).send("Error getting the data");
-       }
+        res.status(200).json(getrecipeid);
+    } catch (error) {
+        console.error("Error getting recipe by ID:", error);
+        res.status(500).json({ message: "Internal server error" });
+    }
 });
 
 router.post("/", async (req,res) =>{
@@ -55,22 +53,24 @@ router.post("/", async (req,res) =>{
 
 
 
-router.put(":/id",async (req,res)=>{
-        const getrecipeid = await recipe.findOne({id:req.params.id});
-        if (!getrecipeid)
-        {
-            res.status(404)
-            throw new Error ("recipe not found, Invalid ID "); 
+router.put("/:id", async (req, res) => {
+    try {
+        const updaterecipe = await recipe.findOne({ id: req.params.id });
+        if (!updaterecipe) {
+            return res.status(404).json({ message: "Recipe not found" });
         }
-        res.status(200).json(getrecipeid);
-       const update = await recipe.findByIdAndUpdate(
-        req.params.id,
-        req.body,
-        {new:true}
-    )
-    res.status(200).json(update);
-})
-
+        const field = req.body.field;
+        if (!field) {
+            return res.status(400).json({ message: "Field to update is required" });
+        }
+        updaterecipe[field] = req.body[field];
+        const updatedRecipe = await updaterecipe.save();
+        res.status(200).json(updatedRecipe);
+    } catch (error) {
+        console.error("Error updating recipe:", error);
+        res.status(500).json({ message: "Internal server error" });
+    }
+});
 
 
 
