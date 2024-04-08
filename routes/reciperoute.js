@@ -28,7 +28,7 @@ router.get("/:id", async (req, res) => {
 });
 
 router.post("/", async (req,res) =>{
-    const{id, recipetitle ,description,ingredients,instruction,cooktime } = req.body;
+    const{id, recipetitle ,description,ingredients,instructions,cooktime } = req.body;
 
     if (!id){
         res.status(404).json({error:"id is required please enter"});
@@ -39,7 +39,7 @@ router.post("/", async (req,res) =>{
         recipetitle,
         description,
         ingredients,
-        instruction,
+        instructions,
         cooktime
     })
 
