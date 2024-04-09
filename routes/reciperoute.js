@@ -53,17 +53,35 @@ router.post("/", async (req,res) =>{
 
 
 
+// router.put("/:id", async (req, res) => {
+//     try {
+//         const updaterecipe = await recipe.findOne({ id: req.params.id });
+//         if (!updaterecipe) {
+//             return res.status(404).json({ message: "Recipe not found" });
+//         }
+//         const field = req.body.field;
+//         if (!field) {
+//             return res.status(400).json({ message: "Field to update is required" });
+//         }
+//         updaterecipe[field] = req.body[field];
+//         const updatedRecipe = await updaterecipe.save();
+//         res.status(200).json(updatedRecipe);
+//     } catch (error) {
+//         console.error("Error updating recipe:", error);
+//         res.status(500).json({ message: "Internal server error" });
+//     }
+// });
+
 router.put("/:id", async (req, res) => {
     try {
         const updaterecipe = await recipe.findOne({ id: req.params.id });
         if (!updaterecipe) {
             return res.status(404).json({ message: "Recipe not found" });
         }
-        const field = req.body.field;
-        if (!field) {
-            return res.status(400).json({ message: "Field to update is required" });
-        }
-        updaterecipe[field] = req.body[field];
+        
+        // Update all fields in the recipe with the data from the request body
+        Object.assign(updaterecipe, req.body);
+
         const updatedRecipe = await updaterecipe.save();
         res.status(200).json(updatedRecipe);
     } catch (error) {
@@ -71,7 +89,6 @@ router.put("/:id", async (req, res) => {
         res.status(500).json({ message: "Internal server error" });
     }
 });
-
 
 
 router.delete("/:id", async  (req, res) =>{
