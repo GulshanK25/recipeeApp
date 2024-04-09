@@ -1,11 +1,11 @@
-// Function to fetch recipes from the API and populate the table
+
 async function fetchRecipes() {
   try {
       const response = await fetch('http://localhost:5000/api/recipe');
       const recipes = await response.json();
       
       const tableBody = document.querySelector('#recipe-table tbody');
-      tableBody.innerHTML = ''; // Clear existing rows
+      tableBody.innerHTML = ''; 
       
       recipes.forEach(recipe => {
           const row = document.createElement('tr');
@@ -67,16 +67,12 @@ async function fetchRecipes() {
 
 // Wait for the DOM content to be fully loaded before executing the script
 document.addEventListener('DOMContentLoaded', function() {
-  // Function to handle form submission for adding a new recipe
   async function addRecipe(event) {
-      event.preventDefault(); // Prevent the default form submission behavior
-      
-      // Gather data from the form
+      event.preventDefault(); 
       const formData = new FormData(event.target);
       const recipeData = Object.fromEntries(formData.entries());
     
       try {
-          // Send a POST request to add the recipe
           const response = await fetch('http://localhost:5000/api/recipe', {
               method: 'POST',
               headers: {
@@ -86,12 +82,9 @@ document.addEventListener('DOMContentLoaded', function() {
           });
           
           if (response.ok) {
-              // Recipe added successfully
               alert('Recipe added successfully!');
-              // Clear the form
               event.target.reset();
           } else {
-              // Failed to add recipe
               throw new Error('Failed to add recipe');
           }
       } catch (error) {
@@ -99,8 +92,6 @@ document.addEventListener('DOMContentLoaded', function() {
           alert('Failed to add recipe. Please try again.');
       }
   }
-
-  // Attach the addRecipe function to the form's submit event
   const addRecipeForm = document.getElementById('Add_recipe');
   addRecipeForm.addEventListener('submit', addRecipe);
 });
@@ -108,17 +99,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 async function updateRecipe(id) {
     try {
-        // Fetch the existing recipe details
         const response = await fetch(`http://localhost:5000/api/recipe/${id}`);
         if (!response.ok) {
             throw new Error('Failed to fetch recipe details');
         }
         const recipe = await response.json();
-
-        // Create a form dynamically
         const form = document.createElement('form');
-
-        // Add input fields for each recipe property
         Object.keys(recipe).forEach(key => {
             const label = document.createElement('label');
             label.textContent = `${key}: `;
@@ -135,15 +121,12 @@ async function updateRecipe(id) {
         const submitButton = document.createElement('button');
         submitButton.textContent = 'Update Recipe';
         form.appendChild(submitButton);
-
-        // Handle form submission
         form.addEventListener('submit', async event => {
             event.preventDefault();
             const formData = new FormData(form);
             const updatedRecipeData = Object.fromEntries(formData.entries());
 
             try {
-                // Send a PUT request to update the recipe
                 const response = await fetch(`http://localhost:5000/api/recipe/${id}`, {
                     method: 'PUT',
                     headers: {
@@ -153,13 +136,9 @@ async function updateRecipe(id) {
                 });
 
                 if (response.ok) {
-                    // Recipe updated successfully
                     alert('Recipe updated successfully!');
-                    // Refresh the table
-                    // fetchRecipes();
                     location.reload();
                 } else {
-                    // Failed to update recipe
                     throw new Error('Failed to update recipe');
                 }
             } catch (error) {
@@ -167,8 +146,6 @@ async function updateRecipe(id) {
                 alert('Failed to update recipe. Please try again.');
             }
         });
-
-        // Append the form to the document
         document.body.appendChild(form);
 
         form.scrollIntoView({ behavior: 'smooth', block: 'start' });

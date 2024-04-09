@@ -78,8 +78,6 @@ router.put("/:id", async (req, res) => {
         if (!updaterecipe) {
             return res.status(404).json({ message: "Recipe not found" });
         }
-        
-        // Update all fields in the recipe with the data from the request body
         Object.assign(updaterecipe, req.body);
 
         const updatedRecipe = await updaterecipe.save();
