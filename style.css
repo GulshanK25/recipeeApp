@@ -1,12 +1,24 @@
 
-body, h1, h3, p, ul, li, table, th, td, input, button {
+body, h1, h3, p, ul, li{
     margin: 0;
     padding: 0;
+    height: 50px;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
 
 
+body header h3 {
+    padding: 10px;
+    position: absolute;
+    left: 20px;
+}
+
+body header h1 {
+    padding: 20;
+    position: absolute;
+    left: 20px;
+}
 body {
     background-color: #f0f0f0;
 }
@@ -21,12 +33,13 @@ header {
 
 nav ul li {
     display: inline;
+    padding: 20px;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 10px 20px ;
 }
 
 nav ul li a:hover {
@@ -58,6 +71,10 @@ form textarea {
     transition: border-color 0.3s ease;
 }
 
+form input:focus,
+form textarea:focus {
+    border-color: #333;
+}
 
 
 form button {
@@ -71,7 +88,6 @@ form button {
 form button:hover {
     background-color: #555;
 }
-
 
 
 /* Table styles */
