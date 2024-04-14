@@ -116,8 +116,6 @@ async function updateRecipe(id) {
             form.appendChild(input);
             form.appendChild(document.createElement('br'));
         });
-
-        // Add a submit button
         const submitButton = document.createElement('button');
         submitButton.textContent = 'Update Recipe';
         form.appendChild(submitButton);
