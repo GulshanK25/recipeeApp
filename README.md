@@ -4,24 +4,29 @@ Backend
 The backend API allows users to perform CRUD (Create, Read, Update, Delete) operations on recipes stored in a MongoDB database.
 
 Dependencies
+
+
 cors (^2.8.5)
 dotenv (^16.4.5)
 express (^4.19.2)
 mongodb (^6.5.0)
 mongoose (^8.3.0)
 nodemon (^3.1.0)
-Features
+Features:
+
 Create: Users can add new recipes to the database.
 Read: Users can view all recipes or retrieve a specific recipe by its ID.
 Update: Users can edit existing recipes.
 Delete: Users can delete recipes from the database.
 Setup
+
 Clone the repository.
 Navigate to the backend directory.
 Install dependencies with npm install.
 Create a .env file in the backend directory and set up environment variables like PORT and MONGODB_URI.
 Run the server using npm start or nodemon.
 Usage
+
 GET /recipes: Retrieve all recipes.
 GET /recipes/:id: Retrieve a specific recipe by its ID.
 POST /recipes: Add a new recipe.
@@ -34,6 +39,7 @@ Frontend
 The frontend provides a basic interface for interacting with the Recipe Management API.
 
 Technologies Used
+
 HTML
 CSS
 JavaScript
